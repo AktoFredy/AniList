@@ -1,19 +1,17 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.dynamic-feature'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-parcelize'
     id 'com.google.devtools.ksp'
-    id 'com.google.dagger.hilt.android'
 }
 
 apply from: '../shared_depedencies.gradle'
 
 android {
-    namespace 'com.aktofredy.anilist'
+    namespace 'com.aktofredy.favorite'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.aktofredy.anilist"
         minSdk 27
         targetSdk 33
         versionCode 1
@@ -38,9 +36,9 @@ android {
     buildFeatures {
         viewBinding = true
     }
-    dynamicFeatures = [':favorite']
 }
 
 dependencies {
+    implementation project(":app")
     implementation project(":core")
 }

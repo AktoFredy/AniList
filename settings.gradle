@@ -15,3 +15,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "AniList"
 include ':app'
+include ':core'
+include ':favorite'
