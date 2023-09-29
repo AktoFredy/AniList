@@ -51,7 +51,7 @@ data class AnimeEntity(
     val popularity: Int? = 0,
 
     @ColumnInfo("title_english")
-    val titleEnglish: String,
+    val titleEnglish: String?,
 
     @ColumnInfo("season")
     val season: String? = "-",

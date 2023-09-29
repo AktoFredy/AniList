@@ -32,11 +32,13 @@ class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
                     Log.e(TAG, "PAGE : $page", )
                 } while (response.pagination.currentPage <= 3)
 
-                val allAnime: List<DataItem> = listAnime
+                val immutableListAnime = listAnime.toList()
 
-                if (listAnime.isNotEmpty() && page == 3) {
-                    emit(ApiResponse.Success(allAnime))
+                if (listAnime.isNotEmpty()) {
+                    Log.d(TAG, "datadata: $immutableListAnime")
+                    emit(ApiResponse.Success(listAnime))
                 } else {
+                    Log.d(TAG, "datadata: $immutableListAnime")
                     emit(ApiResponse.Empty)
                 }
             } catch (e: Exception) {

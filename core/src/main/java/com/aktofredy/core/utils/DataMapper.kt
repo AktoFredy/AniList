@@ -59,7 +59,7 @@ object DataMapper {
                 approved = it.approved,
                 genres = it.genres,
                 popularity = it.popularity ?: 0,
-                titleEnglish = it.titleEnglish,
+                titleEnglish = it.titleEnglish ?: "",
                 season = it.season ?: "-",
                 airing = it.airing,
                 episodes = it.episodes ?: 0,
