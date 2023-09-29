@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/bot_nav_component"
+    android:id="@+id/nav_bot_comp"
     app:startDestination="@id/nav_home">
 
     <fragment
@@ -10,7 +10,13 @@
         android:name="com.aktofredy.anilist.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
-
+    <fragment
+        android:id="@+id/nav_favorite"
+        android:name="com.aktofredy.favorite.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite">
+        <deepLink app:uri="anilist://favorite"/>
+    </fragment>
     <activity
         android:id="@+id/detailActivity"
         android:name="com.aktofredy.anilist.detail.DetailActivity"

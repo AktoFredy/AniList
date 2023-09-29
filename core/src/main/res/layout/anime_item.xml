@@ -4,9 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginStart="16dp"
-    android:layout_marginTop="16dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    app:cardBackgroundColor="@color/navy"
     app:cardCornerRadius="5dp"
     android:elevation="2dp">
 
@@ -19,8 +22,7 @@
         <ImageView
             android:id="@+id/tv_anime_image"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="7"
+            android:layout_height="240dp"
             tools:src="@tools:sample/avatars"
             android:contentDescription="@string/anime_pic"
             android:scaleType="centerCrop"/>
@@ -28,29 +30,39 @@
         <TextView
             android:id="@+id/tv_anime_title"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             style="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:textStyle="bold"
-            android:layout_weight="1"
             android:ellipsize="end"
             android:maxLines="2"
+            android:textColor="@color/white"
             tools:text="@tools:sample/lorem"/>
 
         <TextView
             android:id="@+id/tv_anime_type"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             style="@style/TextAppearance.MaterialComponents.Subtitle2"
-            android:layout_weight="1"
-            android:text="@string/type_s"/>
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/type_s"
+            android:textColor="@color/white"/>
 
         <TextView
             android:id="@+id/tv_anime_season"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             style="@style/TextAppearance.MaterialComponents.Subtitle2"
-            android:layout_weight="1"
-            android:text="@string/season_s"/>
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/season_s"
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 

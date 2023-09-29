@@ -3,6 +3,7 @@ package com.aktofredy.core.ui
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.aktofredy.core.R
 import com.aktofredy.core.databinding.AnimeItemBinding
 import com.aktofredy.core.domain.model.Anime
 import com.bumptech.glide.Glide
@@ -38,8 +39,8 @@ class AnimeAdapter @Inject constructor(private val listAnime: List<Anime>): Recy
                 .into(tvAnimeImage)
 
             tvAnimeTitle.text = anime.title
-            tvAnimeType.text = anime.type
-            tvAnimeSeason.text = anime.season
+            tvAnimeType.text = holder.itemView.context.getString(R.string.type_s, anime.type)
+            tvAnimeSeason.text = holder.itemView.context.getString(R.string.season_s, anime.season)
         }
 
         holder.itemView.setOnClickListener {

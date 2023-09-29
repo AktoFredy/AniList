@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-parcelize'
     id 'com.google.devtools.ksp'
+    id 'com.google.dagger.hilt.android'
 }
 
 apply from: '../shared_depedencies.gradle'
