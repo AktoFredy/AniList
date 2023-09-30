@@ -25,10 +25,10 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_main)
 
         navController.addOnDestinationChangedListener { _, destinationRoute, _ ->
-            if (destinationRoute.id == R.id.nav_home || destinationRoute.id == R.id.nav_favorite) {
-                binding.navBotView.visibility = View.VISIBLE
-            } else {
+            if (destinationRoute.id == R.id.detailActivity) {
                 binding.navBotView.visibility = View.GONE
+            } else {
+                binding.navBotView.visibility = View.VISIBLE
             }
         }
 

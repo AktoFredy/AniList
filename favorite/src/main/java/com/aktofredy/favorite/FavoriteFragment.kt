@@ -7,23 +7,40 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
+import com.aktofredy.anilist.di.FavModuleDependencies
 import com.aktofredy.core.domain.model.Anime
 import com.aktofredy.core.ui.AnimeAdapter
 import com.aktofredy.favorite.databinding.FragmentFavoriteBinding
-import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.EntryPointAccessors
+import javax.inject.Inject
 
-@AndroidEntryPoint
 class FavoriteFragment : Fragment() {
 
     private var _binding: FragmentFavoriteBinding? = null
     private val binding get() = _binding!!
 
-    private val favoriteViewModel by viewModels<FavoriteViewModel>()
+    @Inject
+    lateinit var factory: ViewModelFactory
+
+    private val favoriteViewModel: FavoriteViewModel by viewModels {
+        factory
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        DaggerFavComponent.builder()
+            .context(requireActivity())
+            .appDependencies(
+                EntryPointAccessors.fromApplication(
+                    requireContext(),
+                    FavModuleDependencies::class.java
+                )
+            )
+            .build()
+            .inject(this)
+
         // Inflate the layout for this fragment
         _binding = FragmentFavoriteBinding.inflate(inflater, container, false)
         return binding.root
