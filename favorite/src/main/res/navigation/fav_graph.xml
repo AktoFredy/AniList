@@ -8,5 +8,17 @@
         android:id="@+id/favoriteFragment"
         android:name="com.aktofredy.favorite.FavoriteFragment"
         android:label="fragment_favorite"
-        tools:layout="@layout/fragment_favorite" />
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_detailActivity2"
+            app:destination="@id/detailActivity2" />
+    </fragment>
+    <activity
+        android:id="@+id/detailActivity2"
+        android:name="com.aktofredy.anilist.detail.DetailActivity"
+        android:label="DetailActivity" >
+        <argument
+            android:name="data_anime"
+            app:argType="com.aktofredy.core.domain.model.Anime" />
+    </activity>
 </navigation>

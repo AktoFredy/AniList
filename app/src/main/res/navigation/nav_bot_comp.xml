@@ -9,12 +9,20 @@
         android:id="@+id/nav_home"
         android:name="com.aktofredy.anilist.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_detailActivity"
+            app:destination="@id/detailActivity" />
+    </fragment>
     <activity
         android:id="@+id/detailActivity"
         android:name="com.aktofredy.anilist.detail.DetailActivity"
         android:label="detail_extended"
-        tools:layout="@layout/detail_extended" />
+        tools:layout="@layout/detail_extended" >
+        <argument
+            android:name="data_anime"
+            app:argType="com.aktofredy.core.domain.model.Anime" />
+    </activity>
     <include-dynamic
         android:id="@+id/nav_favorite"
         app:moduleName="favorite"
