@@ -1,13 +1,18 @@
 package com.aktofredy.anilist
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.aktofredy.anilist.databinding.ActivityMainBinding
+import com.aktofredy.anilist.settings.SettingActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -44,5 +49,24 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appbarConf)
         navView.setupWithNavController(navController)
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.home_app_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.search_btn -> {
+                Toast.makeText(this, "WOWOW", Toast.LENGTH_SHORT).show()
+            }
+            R.id.settings_btn -> {
+                startActivity(Intent(this, SettingActivity::class.java))
+                Toast.makeText(this, "WOWOW2", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 }
