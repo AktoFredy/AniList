@@ -35,7 +35,7 @@ class DetailActivity : AppCompatActivity() {
         setFavorite(statFav)
         binding.favBtn.setOnClickListener {
             statFav = !statFav
-            detailViewModel.updateFavoriteAnime(dataAnime, !dataAnime.isFavorite)
+            detailViewModel.updateFavoriteAnime(dataAnime, statFav)
             setFavorite(statFav)
         }
     }
