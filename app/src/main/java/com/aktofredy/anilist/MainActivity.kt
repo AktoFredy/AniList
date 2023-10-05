@@ -42,7 +42,8 @@ class MainActivity : AppCompatActivity() {
         val appbarConf = AppBarConfiguration(
             setOf(
                 R.id.nav_home,
-                R.id.nav_favorite
+                R.id.nav_favorite,
+                R.id.nav_account
             )
         )
 

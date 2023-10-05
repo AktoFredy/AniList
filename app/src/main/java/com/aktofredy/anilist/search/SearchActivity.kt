@@ -1,6 +1,5 @@
 package com.aktofredy.anilist.search
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,7 +8,6 @@ import androidx.activity.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.aktofredy.anilist.R
 import com.aktofredy.anilist.databinding.ActivitySearchBinding
-import com.aktofredy.anilist.detail.DetailActivity
 import com.aktofredy.core.domain.model.Anime
 import com.aktofredy.core.ui.AnimeAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -43,9 +41,7 @@ class SearchActivity : AppCompatActivity() {
                         rvAnime.adapter = adapter
                         adapter.setItemClickCallback(object: AnimeAdapter.OnItemClickCallback {
                             override fun onAnimeClicked(data: Anime) {
-                                val intent = Intent(this@SearchActivity, DetailActivity::class.java)
-                                intent.putExtra(DetailActivity.EXTRA_DATA, data)
-                                startActivity(intent)
+                                //not enabled for now
                             }
                         })
                         emptySearch.root.visibility = if (data.isNotEmpty()) View.GONE else View.VISIBLE

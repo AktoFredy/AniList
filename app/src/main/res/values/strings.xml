@@ -16,4 +16,5 @@
     <string name="insert_anime_title">Insert Anime Title</string>
     <string name="initial_search_view">Insert keyword or Anime title to Search</string>
     <string name="norelated_search">There is no anime related to that keyword</string>
+    <string name="title_profile">Creator Profile</string>
 </resources>

@@ -17,3 +17,4 @@ rootProject.name = "AniList"
 include ':app'
 include ':core'
 include ':favorite'
+include ':profile'

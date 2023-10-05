@@ -23,9 +23,15 @@
             android:name="data_anime"
             app:argType="com.aktofredy.core.domain.model.Anime" />
     </activity>
+
     <include-dynamic
         android:id="@+id/nav_favorite"
         app:moduleName="favorite"
         app:graphResName="fav_graph"/>
+
+    <include-dynamic
+        android:id="@+id/nav_account"
+        app:moduleName="profile"
+        app:graphResName="prop_graph"/>
 
 </navigation>
