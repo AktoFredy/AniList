@@ -5,4 +5,7 @@
     <color name="gray">#282C34</color>
     <color name="pink">#E91E63</color>
     <color name="pink500">#FF1665</color>
+    <color name="blue500">#65D4E1</color>
+    <color name="blue200">#8CE8ED</color>
+    <color name="grayDarken">#AAAAAA</color>
 </resources>

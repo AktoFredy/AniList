@@ -38,7 +38,6 @@
         android:text="@string/name_creator"
         android:textStyle="bold"
         android:textSize="24sp"
-        android:textColor="@color/black"
         android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
