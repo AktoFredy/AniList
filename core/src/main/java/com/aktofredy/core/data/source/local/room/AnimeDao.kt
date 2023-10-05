@@ -17,6 +17,9 @@ interface AnimeDao {
     @Query("SELECT * FROM anime WHERE isFavorite = 1")
     fun getFavoriteAnime(): Flow<List<AnimeEntity>>
 
+    @Query("SELECT * FROM anime WHERE title LIKE '%' || :word || '%'")
+    fun searchAnime(word: String): Flow<List<AnimeEntity>>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAnime(anime: List<AnimeEntity>)
 

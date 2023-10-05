@@ -12,6 +12,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.aktofredy.anilist.databinding.ActivityMainBinding
+import com.aktofredy.anilist.home.HomeFragmentDirections
 import com.aktofredy.anilist.settings.SettingActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
@@ -20,6 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private var state = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,9 +34,11 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_main)
 
         navController.addOnDestinationChangedListener { _, destinationRoute, _ ->
-            if (destinationRoute.id == R.id.detailActivity) {
+            if (destinationRoute.id == R.id.detailActivity || destinationRoute.id == R.id.searchFragment) {
                 binding.navBotView.visibility = View.GONE
+                state = false
             } else {
+                state = true
                 binding.navBotView.visibility = View.VISIBLE
             }
         }
@@ -52,18 +56,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.home_app_menu, menu)
+        if (state) {
+            menuInflater.inflate(R.menu.home_app_menu, menu)
+        }
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
             R.id.search_btn -> {
+                val dir = HomeFragmentDirections.actionNavHomeToSearchFragment()
+                findNavController(R.id.nav_host_fragment_main).navigate(dir)
                 Toast.makeText(this, "WOWOW", Toast.LENGTH_SHORT).show()
             }
             R.id.settings_btn -> {
                 startActivity(Intent(this, SettingActivity::class.java))
-                Toast.makeText(this, "WOWOW2", Toast.LENGTH_SHORT).show()
             }
         }
 

@@ -13,6 +13,8 @@ class LocalDataSource @Inject constructor(private val animeDao: AnimeDao) {
 
     fun getFavoriteAnime(): Flow<List<AnimeEntity>> = animeDao.getFavoriteAnime()
 
+    fun getSearchedAnime(word: String): Flow<List<AnimeEntity>> = animeDao.searchAnime(word)
+
     suspend fun insertAnime(listAnime: List<AnimeEntity>) = animeDao.insertAnime(listAnime)
 
     fun setFavoriteAnime(anime: AnimeEntity, state: Boolean) {

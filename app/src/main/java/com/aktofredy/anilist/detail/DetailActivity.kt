@@ -23,6 +23,7 @@ class DetailActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
+
         val dataAnime = args.dataAnime
 
         supportActionBar?.title = dataAnime.title
@@ -46,5 +47,9 @@ class DetailActivity : AppCompatActivity() {
         } else {
             binding.favBtn.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.notfavorite))
         }
+    }
+
+    companion object {
+        const val EXTRA_DATA = "extra_data"
     }
 }

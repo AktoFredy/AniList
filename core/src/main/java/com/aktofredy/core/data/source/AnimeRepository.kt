@@ -43,6 +43,12 @@ class AnimeRepository @Inject constructor(
         }
     }
 
+    override fun getSearchedAnime(word: String): Flow<List<Anime>> {
+        return localDataSource.getSearchedAnime(word).map {
+            DataMapper.mapEntitiesToDomain(it)
+        }
+    }
+
     override fun updateFavoriteAnime(anime: Anime, state: Boolean) {
         val animeEntity = DataMapper.mapDomainToEntity(anime)
         appExecutors.diskIO().execute { localDataSource.setFavoriteAnime(animeEntity, state) }

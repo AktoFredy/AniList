@@ -13,4 +13,7 @@
     <string name="pref_dark_name">Dark Mode</string>
     <string name="pref_dark_key">key_theme</string>
     <string name="pref_auto_dark">auto</string>
+    <string name="insert_anime_title">Insert Anime Title</string>
+    <string name="initial_search_view">Insert keyword or Anime title to Search</string>
+    <string name="norelated_search">There is no anime related to that keyword</string>
 </resources>
