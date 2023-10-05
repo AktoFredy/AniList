@@ -13,9 +13,6 @@
         <action
             android:id="@+id/action_nav_home_to_detailActivity"
             app:destination="@id/detailActivity" />
-        <action
-            android:id="@+id/action_nav_home_to_searchFragment"
-            app:destination="@id/searchFragment" />
     </fragment>
     <activity
         android:id="@+id/detailActivity"
@@ -30,10 +27,5 @@
         android:id="@+id/nav_favorite"
         app:moduleName="favorite"
         app:graphResName="fav_graph"/>
-    <fragment
-        android:id="@+id/searchFragment"
-        android:name="com.aktofredy.anilist.search.SearchFragment"
-        android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
 
 </navigation>
