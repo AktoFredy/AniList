@@ -1,4 +1,4 @@
-[![AktoFredy](https://circleci.com/gh/AktoFredy/AniList.svg?style=svg&circle-token=8d3ec00169e6ba4fbd81983492c4a843dcdb1888)](https://circleci.com/gh/AktoFredy/AniList)
+[![AktoFredy](https://circleci.com/gh/AktoFredy/AniList.svg?style=shield&circle-token=8d3ec00169e6ba4fbd81983492c4a843dcdb1888)](https://circleci.com/gh/AktoFredy/AniList)
 
 # AniList - list anime app with information for each animation
 Starter for submission project module android expert using jikan api.
