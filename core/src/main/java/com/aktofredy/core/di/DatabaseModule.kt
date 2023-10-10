@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.aktofredy.core.data.source.local.room.AnimeDao
 import com.aktofredy.core.data.source.local.room.AnimeDatabase
+import com.aktofredy.core.utils.Constant
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,7 +21,7 @@ class DatabaseModule {
     @Singleton
     @Provides
     fun provideDatabase(@ApplicationContext context: Context): AnimeDatabase {
-        val passphrase: ByteArray = SQLiteDatabase.getBytes("aktofredy".toCharArray())
+        val passphrase: ByteArray = SQLiteDatabase.getBytes(Constant.PASS_PRA.toCharArray())
         val factory = SupportFactory(passphrase)
         return Room.databaseBuilder(
             context,
