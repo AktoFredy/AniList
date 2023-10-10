@@ -29,7 +29,7 @@ class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
                         }
                     }
                     page += 1
-                    Log.e(TAG, "PAGE : $page", )
+                    Log.e(TAG, "PAGE : $page")
                 } while (response.pagination.currentPage <= 3)
 
                 if (listAnime.isNotEmpty()) {

@@ -7,7 +7,7 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.navArgs
 import com.aktofredy.anilist.R
 import com.aktofredy.anilist.databinding.ActivityDetailBinding
-import com.bumptech.glide.Glide
+import com.aktofredy.core.utils.loadImage
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -27,9 +27,7 @@ class DetailActivity : AppCompatActivity() {
         val dataAnime = args.dataAnime
 
         supportActionBar?.title = dataAnime.title
-        Glide.with(this)
-            .load(dataAnime.images)
-            .into(binding.tvDetailImage)
+        binding.tvDetailImage.loadImage(dataAnime.images)
         binding.content.tvDetailSynopsis.text = dataAnime.synopsis
 
         var statFav = dataAnime.isFavorite

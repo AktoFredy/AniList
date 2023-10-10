@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.aktofredy.core.utils.Constant
+import com.aktofredy.core.utils.loadImage
 import com.aktofredy.profile.databinding.FragmentProfileBinding
-import com.bumptech.glide.Glide
 
 class ProfileFragment : Fragment() {
 
@@ -25,9 +25,7 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Glide.with(requireActivity())
-            .load(Constant.PROFILE_URL)
-            .into(binding.picProfile)
+        binding.picProfile.loadImage(Constant.PROFILE_URL)
     }
 
     override fun onDestroyView() {

@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.aktofredy.core.R
 import com.aktofredy.core.databinding.AnimeItemBinding
 import com.aktofredy.core.domain.model.Anime
-import com.bumptech.glide.Glide
+import com.aktofredy.core.utils.loadImage
 import javax.inject.Inject
 
 class AnimeAdapter @Inject constructor(private val listAnime: List<Anime>): RecyclerView.Adapter<AnimeAdapter.AnimeViewHolder>(){
@@ -34,9 +34,7 @@ class AnimeAdapter @Inject constructor(private val listAnime: List<Anime>): Recy
         val anime = listAnime[position]
 
         holder.binding.apply {
-            Glide.with(holder.itemView.context)
-                .load(anime.images)
-                .into(tvAnimeImage)
+            tvAnimeImage.loadImage(anime.images)
 
             tvAnimeTitle.text = anime.title
             tvAnimeType.text = holder.itemView.context.getString(R.string.type_s, anime.type)

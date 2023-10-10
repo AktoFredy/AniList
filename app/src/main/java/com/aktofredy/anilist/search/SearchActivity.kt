@@ -32,7 +32,7 @@ class SearchActivity : AppCompatActivity() {
         with(binding) {
             searchView.setupWithSearchBar(searchBar)
             searchView.editText
-                .setOnEditorActionListener{ textView, actionId, event ->
+                .setOnEditorActionListener{ _, _, _ ->
                     searchBar.text = searchView.text
                     searchView.hide()
                     searchViewModel.searchAnime(searchBar.text.toString()).observe(this@SearchActivity) { data ->

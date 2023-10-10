@@ -32,11 +32,7 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_main)
 
         navController.addOnDestinationChangedListener { _, destinationRoute, _ ->
-            if (destinationRoute.id == R.id.detailActivity) {
-                binding.navBotView.visibility = View.GONE
-            } else {
-                binding.navBotView.visibility = View.VISIBLE
-            }
+            binding.navBotView.visibility = if (destinationRoute.id == R.id.detailActivity) View.GONE else View.VISIBLE
         }
 
         val appbarConf = AppBarConfiguration(
