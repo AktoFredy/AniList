@@ -13,4 +13,4 @@ Starter for submission project module android expert using jikan api.
 * certificate pinning use short url "api.jikan.moe"
 
 ## Diagram class for AniList
-![Diagram](AniList/app/src/main/res/drawable/anilistdi.png)
+![Diagram](app/src/main/res/drawable/anilistdi.png)
