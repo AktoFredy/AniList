@@ -46,8 +46,4 @@ class DetailActivity : AppCompatActivity() {
             binding.favBtn.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.notfavorite))
         }
     }
-
-    companion object {
-        const val EXTRA_DATA = "extra_data"
-    }
 }

@@ -9,6 +9,15 @@
         <dist:delivery>
             <dist:install-time />
         </dist:delivery>
+
         <dist:fusing dist:include="true" />
     </dist:module>
+
+    <application>
+        <activity
+            android:name="com.aktofredy.detail_favorite.DetailFavoriteActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AniList.NoActionBar"/>
+    </application>
+
 </manifest>

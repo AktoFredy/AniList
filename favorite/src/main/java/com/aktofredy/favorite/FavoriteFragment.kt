@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.aktofredy.ViewModelFactory
 import com.aktofredy.anilist.di.FavModuleDependencies
 import com.aktofredy.core.domain.model.Anime
 import com.aktofredy.core.ui.AnimeAdapter
@@ -60,8 +61,8 @@ class FavoriteFragment : Fragment() {
                 binding.rvAnimeFav.adapter = adapter
                 adapter.setItemClickCallback(object : AnimeAdapter.OnItemClickCallback {
                     override fun onAnimeClicked(data: Anime) {
-                        val fav = FavoriteFragmentDirections.actionFavoriteFragmentToDetailActivity2(data)
-                        fav.dataAnime = data
+                        val fav = FavoriteFragmentDirections.actionFavoriteFragmentToDetailFavoriteActivity(data)
+                        fav.dataAnimeFav = data
                         findNavController().navigate(fav)
                     }
                 })

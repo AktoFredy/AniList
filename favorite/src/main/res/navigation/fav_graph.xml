@@ -10,15 +10,16 @@
         android:label="Favorite"
         tools:layout="@layout/fragment_favorite" >
         <action
-            android:id="@+id/action_favoriteFragment_to_detailActivity2"
-            app:destination="@id/detailActivity2" />
+            android:id="@+id/action_favoriteFragment_to_detailFavoriteActivity"
+            app:destination="@id/detailFavoriteActivity" />
     </fragment>
     <activity
-        android:id="@+id/detailActivity2"
-        android:name="com.aktofredy.anilist.detail.DetailActivity"
-        android:label="DetailActivity" >
+        android:id="@+id/detailFavoriteActivity"
+        android:name="com.aktofredy.detail_favorite.DetailFavoriteActivity"
+        android:label="activity_detail_favorite"
+        tools:layout="@layout/activity_detail_favorite" >
         <argument
-            android:name="data_anime"
+            android:name="data_anime_fav"
             app:argType="com.aktofredy.core.domain.model.Anime" />
     </activity>
 </navigation>

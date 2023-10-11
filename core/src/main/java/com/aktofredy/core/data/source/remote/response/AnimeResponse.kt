@@ -201,7 +201,7 @@ data class Trailer(
     val youtubeId: String,
 
     @field:SerializedName("url")
-    val url: String
+    val url: String?
 )
 
 data class StudiosItem(

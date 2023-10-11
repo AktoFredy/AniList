@@ -1,7 +1,6 @@
 package com.aktofredy.anilist.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -45,8 +44,6 @@ class HomeFragment : Fragment() {
                         is Resource.Loading -> setLoading(true)
                         is Resource.Success -> {
                             setLoading(false)
-
-                            Log.d("fragHome", "onViewCreated: ${anime.data}")
 
                             val adapter = anime.data?.let { AnimeAdapter(it) }
                             binding.apply {

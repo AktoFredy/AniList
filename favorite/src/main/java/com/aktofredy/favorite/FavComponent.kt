@@ -2,6 +2,7 @@ package com.aktofredy.favorite
 
 import android.content.Context
 import com.aktofredy.anilist.di.FavModuleDependencies
+import com.aktofredy.detail_favorite.DetailFavoriteActivity
 import dagger.BindsInstance
 import dagger.Component
 
@@ -10,6 +11,7 @@ import dagger.Component
 interface FavComponent {
 
     fun inject(fragment: FavoriteFragment)
+    fun injectDet(activity: DetailFavoriteActivity)
 
     @Component.Builder
     interface Builder {
