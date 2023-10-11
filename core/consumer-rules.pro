@@ -1,0 +1,3 @@
+-keep class org.bouncycastle.** { *; }
+-keep class org.conscrypt.** { *; }
+-keep class org.openjsse.** { *; }
