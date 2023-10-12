@@ -15,6 +15,7 @@ import com.aktofredy.core.ui.AnimeAdapter
 import com.aktofredy.favorite.databinding.FragmentFavoriteBinding
 import dagger.hilt.android.EntryPointAccessors
 import javax.inject.Inject
+import com.aktofredy.core.R
 
 class FavoriteFragment : Fragment() {
 
@@ -68,7 +69,7 @@ class FavoriteFragment : Fragment() {
                 })
 
                 binding.emptyPage.root.visibility = if (dataFav.isNotEmpty()) View.GONE else View.VISIBLE
-                binding.emptyPage.tvShownProblem.text = getString(com.aktofredy.core.R.string.empty_page)
+                binding.emptyPage.tvShownProblem.text = getString(R.string.empty_page)
                 setLoading(false)
             }
         }

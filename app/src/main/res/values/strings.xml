@@ -1,7 +1,6 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">AniList</string>
-    <string name="title_favorite">Module Title</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_favorite" tools:keep="@string/title_favorite">Module Title</string>
     <string name="home">Home</string>
     <string name="favorite">Favorite</string>
     <string name="profile">Profile</string>
@@ -12,9 +11,8 @@
     <string name="pref_dark_summary">Change theme of AniList according your preference</string>
     <string name="pref_dark_name">Dark Mode</string>
     <string name="pref_dark_key">key_theme</string>
-    <string name="pref_auto_dark">auto</string>
     <string name="insert_anime_title">Insert Anime Title</string>
     <string name="initial_search_view">Insert keyword or Anime title to Search</string>
     <string name="norelated_search">There is no anime related to that keyword</string>
-    <string name="title_profile">Creator Profile</string>
+    <string name="title_profile" tools:keep="@string/title_profile">Creator Profile</string>
 </resources>
